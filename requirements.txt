@@ -1,4 +1,4 @@
-pandas
+coampandas
 tqdm
 matplotlib
 dgl

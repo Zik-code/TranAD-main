@@ -30,6 +30,7 @@ To run a model on a dataset, run the following command:
 python3 main.py --model <model> --dataset <dataset> --retrain
 ```
 where `<model>` can be either of 'TranAD', 'GDN', 'MAD_GAN', 'MTAD_GAT', 'MSCRED', 'USAD', 'OmniAnomaly', 'LSTM_AD', and dataset can be one of 'SMAP', 'MSL', 'SWaT', 'WADI', 'SMD', 'MSDS', 'MBA', 'UCR' and 'NAB. To train with 20% data, use the following command 
+其中 <model> 可以是 'TranAD'、'GDN'、'MAD_GAN'、'MTAD_GAT'、'MSCREAD'、'USAD'、'OmniAnomaly'、'LSTM_AD' 中的任意一个，<dataset> 可以是 'SMAP'、'MSL'、'SWaT'、'WADI'、'SMD'、'MSDS'、'MBA'、'UCR' 和 'NAB' 中的一个。要使用 20% 的数据进行训练，请使用以下命令
 ```bash
 python3 main.py --model <model> --dataset <dataset> --retrain --less
 ```
