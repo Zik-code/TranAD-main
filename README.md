@@ -97,3 +97,57 @@ Copyright (c) 2022, Shreshth Tuli.
 All rights reserved.
 
 See License file for more details.
+import pandas as pd
+import numpy as np
+
+# 人口统计学特征
+age = np.random.randint(18, 70, 200)  # 年龄范围在18到70岁之间
+gender = np.random.choice(['男', '女'], 200)  # 随机选择性别
+regions = ['一线城市', '二线城市', '三线城市', '四线城市', '农村地区']
+region = np.random.choice(regions, 200)  # 随机选择地区
+family_income = np.random.randint(2000, 50000, 200)  # 家庭收入范围在2000到50000元之间
+family_size = np.random.randint(1, 7, 200)  # 家庭人口数范围在1到6人之间
+
+# 智能家居相关特征
+has_smart_home = np.random.choice([0, 1], 200)  # 0表示没有，1表示有
+smart_home_needs = ['安防', '节能', '便捷控制', '健康监测', '娱乐']
+smart_home_need = [np.random.choice(smart_home_needs) for _ in range(200)]  # 随机选择智能家居功能需求
+awareness_level = np.random.choice(['不了解', '了解一点', '比较了解', '非常了解'], 200)  # 对智能家居的了解程度
+usage_frequency = np.random.choice(['很少用', '偶尔用', '经常用', '每天用'], 200)  # 智能家居使用频率
+
+# 品牌相关特征
+used_xiaomi_products = np.random.choice([0, 1], 200)  # 0表示没有使用过，1表示使用过
+satisfaction_level = np.random.choice(['不满意', '一般', '满意', '非常满意'], 200)  # 对小米品牌的满意度
+xiaomi_smart_home_awareness = np.random.choice(['不知道', '听说过', '了解一点', '比较了解', '非常了解'], 200)  # 对小米智能家居品牌的认知度
+
+# 其他特征
+purchase_budget = np.random.randint(500, 10000, 200)  # 购买预算范围在500到10000元之间
+purchase_channel = np.random.choice(['线上', '线下'], 200)  # 购买渠道偏好
+promotion_sensitivity = np.random.choice(['不敏感', '一般', '敏感'], 200)  # 促销活动敏感度
+
+# 目标变量：是否购买（随机生成，这里只是简单模拟，实际可根据更复杂的逻辑生成）
+purchase = np.random.choice([0, 1], 200)
+
+# 创建DataFrame
+data = {
+    '年龄': age,
+    '性别': gender,
+    '地区': region,
+    '家庭收入': family_income,
+    '家庭人口数': family_size,
+    '是否已有智能家居设备': has_smart_home,
+    '对智能家居功能的需求': smart_home_need,
+    '对智能家居的了解程度': awareness_level,
+    '智能家居使用频率': usage_frequency,
+    '是否使用过小米其他产品': used_xiaomi_products,
+    '对小米品牌的满意度': satisfaction_level,
+    '对小米智能家居品牌的认知度': xiaomi_smart_home_awareness,
+    '购买预算': purchase_budget,
+    '购买渠道偏好': purchase_channel,
+    '促销活动敏感度': promotion_sensitivity,
+    '是否购买': purchase
+}
+
+df = pd.DataFrame(data)
+
+print(df.head(100))

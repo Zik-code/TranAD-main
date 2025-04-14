@@ -14,6 +14,9 @@ import torch.nn as nn
 from time import time
 from pprint import pprint
 # from beepy import beep
+import ctypes
+dll_path = r"D:\Anaconda\envs\myenv\Lib\site-packages\dgl\libdgl.dll"  # 替换为实际绝对路径
+my_dll = ctypes.CDLL(dll_path)
 
 def convert_to_windows(data, model):
 	windows = []; w_size = model.n_window
